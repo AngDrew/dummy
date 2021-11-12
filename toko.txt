@@ -1,0 +1,77 @@
+
+Setiap object yang bisa di load harus dimasukkan ke file supaya bisa dibaca program dan nanti nya akan dimasukkan ke variable.
+contoh: 
+* mau simpan barang dagangan dan pembeli
+* produk:
+    * Beras, 20.000 / kg, stok 100 kg
+    * Minyak, 15.000 / lt, stok 500 lt
+    * Gula, 20.000 / kg, stok 50kg
+* pembeli: 
+    * Andrew:
+        * Beras, 3kg
+        * Minyak, 3lt
+        * Gula 1kg
+    * Nico
+        * Beras 5kg
+        * Gula 4kg
+
+[Q] cara nyimpen nya di file gimana?
+kurang lebih format file nya kayak gini:
+
+~barang~
+Beras
+20000
+100
+kg
+Minyak
+15000
+500
+lt
+Gula
+20000
+50
+kg
+~pembeli~
+.Andrew
+Beras
+3
+Minyak
+3
+Gula
+1
+.Nico
+Beras
+5
+Gula
+4
+~end~
+
+[Q] cara biar file nya bisa jadi program gimana?
+algoritma sederhana nya:
+1. bikin method buat read file
+2. bikin method buat read produk dari file
+3. bikin method buat read pembeli dari file
+
+convert dari file jadi program kita
+1. bikin 4 array sebagai variable global yang bisa diakses dari seluruh file. size array nya sebanyak jumlah produk sih haruse, tapi jaga" bikin 100 ae
+2. tapi 4 array itu dipake buat simpen 1 produk aja
+3. array: names, prices, stocks, units
+4. names itu nyimpennama produk
+5. prices nyimpen harga produk
+6. stocks nyimpen stok nya
+7. units nyimpen satuan nya
+8. semua itu cuma ilustrasi ya, bikin sesuai kebutuhan mu aja
+
+algoritma looping file nya
+1. bikin `while` loop
+2. while line yang dibaca bukan ~end~
+3. ketika line yang dibaca ~barang~, maka masukkan ke array tadi. berurutan line pertama masuk ke array names, next line masuk ke array prices, next line nya lagi masuk ke stocks, next nya lagi masuk ke units
+4. next line nya lagi, masuk ke array names lagi. and repeat sampe ketemu ~pembeli~
+5. kalo ketemu ~pembeli~, terserah mau diapain.. dijadiin array ato stop
+6. yang pasti ~end~ itu bisa dibuat perkondisian buat berhentiin looping juga
+
+[REF] referensi bacaan:
+String at index https://www.geeksforgeeks.org/string-at-in-cpp/ 
+String compare https://www.tutorialkart.com/cpp/cpp-string-equals/
+IO file line by line https://stackoverflow.com/questions/41456245/is-it-possible-to-iterate-through-a-text-file-lines-and-use-stringstream-to-pars
+
